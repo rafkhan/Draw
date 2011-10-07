@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item android:id="@+id/file_operator" android:title="@string/file">
+		<menu>	
+			<item android:id="@+id/new_file" android:title="@string/new_file" />
+			<item android:id="@+id/load" android:title="@string/load" />
+			<item android:id="@+id/save" android:title="@string/save" />
+			<item android:id="@+id/save_as" android:title="@string/save_as" />
+		</menu>
+	</item>
+
+	<item android:id="@+id/pencil" android:title="@string/pencil" />
+	<item android:id="@+id/eraser" android:title="@string/eraser" />
+	<item android:id="@+id/stroke" android:title="@string/stroke" />
+	<item android:id="@+id/colour" android:title="@string/colour" />
+	<item android:id="@+id/clear"  android:title="@string/clear"  />
+	
+</menu>

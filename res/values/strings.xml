@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Draw!</string>
+    <string name="app_name">Draw.</string>
+    <string name="pencil">Pencil</string>
+    <string name="eraser">Eraser</string>
+    <string name="stroke">Stroke size</string>
+    <string name="colour">Color</string>
+    <string name="new_file">New image</string>
+    <string name="word">Generate new word</string>
+    <string name="save">Save</string>
+    <string name="save_as">Save as</string>
+    <string name="tool_set">Tool settings</string>
+    <string name="load">Load</string>
+    <string name="file">File</string>
+    <string name="clear">Clear canvas</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/dialog_root_element"
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"
+	android:padding="10dp">
+
+	<TextView 
+		android:id="@+id/stroke_text"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" 
+		android:textSize="30dp"/>
+
+	<SeekBar
+		android:id="@+id/dialog_seekbar"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="5px"
+		android:layout_below="@+id/stroke_text"/>
+
+	<Button
+		android:id="@+id/dialog_button"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" 
+		android:layout_below="@+id/dialog_seekbar"
+		android:text="Set stroke"/>
+				
+</RelativeLayout>
