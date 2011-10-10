@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout 
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads" 
-	android:id="@+id/main_layout"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-    <!-- 
-	<com.google.ads.AdView 
-		android:id="@+id/adView"
-		android:layout_width="wrap_content" 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+	android:id="@+id/main_layout" 
+	android:orientation="vertical"
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content">
+	
+	<TextView 
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:id="@+id/textView1" android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		ads:adUnitId="ca-pub-0669517924713762"
-		ads:adSize="BANNER" 
-		ads:loadAdOnCreate="true"/>
-	 -->
-		
+		android:text="Thanks! This ad helps support Draw.'s production." android:layout_marginBottom="7dp"/>
+
 </LinearLayout>

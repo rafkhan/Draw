@@ -1,7 +1,6 @@
 package com.rafaelkhan.android.draw;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -122,6 +121,15 @@ public class Draw extends Activity {
 		case R.id.new_file:
 			this.newFile();
 			return true;
+			
+		case R.id.share:
+			this.shareImage();
+			return true;
+			
+		case R.id.support:
+			Intent i = new Intent();
+			i.setClass(this, BannerActivity.class);
+			startActivity(i);
 		}
 		return true;
 	}
@@ -301,11 +309,6 @@ public class Draw extends Activity {
 		OutputStream fOut = null;
 		File file = new File(path, "draw_images/" + fname + ".jpg");
 		file.getParentFile().mkdirs();
-		try {
-			file.createNewFile();
-		} catch (IOException e) {
-			Log.e("create noo", e.toString());
-		}
 
 		try {
 			file.createNewFile();
@@ -450,6 +453,47 @@ public class Draw extends Activity {
 				setTitle("Draw. - Eraser - " + this.fileName);
 			}
 		}
+	}
+
+	private void shareImage() {
+		this.pv.setDrawingCacheEnabled(true);
+		this.pv.invalidate();
+		String path = Environment.getExternalStorageDirectory().toString();
+		OutputStream fOut = null;
+		File file = new File(path,
+				"Android/data/com.rafaelkhan.android.draw/cache/share_cache.jpg");
+		file.getParentFile().mkdirs();
+
+		try {
+			file.createNewFile();
+		} catch (Exception e) {
+			Log.e("draw_save", e.toString());
+		}
+
+		try {
+			fOut = new FileOutputStream(file);
+		} catch (Exception e) {
+			Log.e("draw_save1", e.toString());
+		}
+
+		if (this.pv.getDrawingCache() == null) {
+			Log.e("lal", "tis null");
+		}
+
+		this.pv.getDrawingCache()
+				.compress(Bitmap.CompressFormat.JPEG, 85, fOut);
+
+		try {
+			fOut.flush();
+			fOut.close();
+		} catch (IOException e) {
+			Log.e("draw_save1", e.toString());
+		}
+
+		Intent share = new Intent(Intent.ACTION_SEND);
+		share.setType("image/jpeg");
+		share.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + file.getAbsolutePath()));
+		startActivity(Intent.createChooser(share, "Share Image"));
 	}
 
 	private class PaintView extends View {
